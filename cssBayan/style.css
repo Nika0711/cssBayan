@@ -54,6 +54,9 @@ h1{
 .accordion-item{
     border-bottom: 1px solid darkgreen;
 }
+.accordion-item:active .accordion-image{
+    transform: scale(1);
+}
 .accordion-item:last-child{
     border-bottom: 0px;
 }
@@ -70,6 +73,14 @@ h1{
     color: rgb(81, 209, 81);
 }
 
+.accordion-item:active{
+    background-color: rgb(49, 117, 49, 0.1);
+}
+.accordion-item:active .accordion-title{
+    color: rgb(81, 209, 81);
+}
+.accordion-item:checked ~ .accordion-image {
+}
 .accordion-item:first-child > .accordion-image {
     display:block;
 }
@@ -99,6 +110,9 @@ h1{
 }
 
 
+
+
+/* to support hover effects for tablet and mobile */
 @media (hover: hover) {
 
    .accordion:hover .accordion-title:after{
