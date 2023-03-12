@@ -15,7 +15,7 @@ body {
 }
 img{
     display: block;
-    width: 50%;
+    width: 40%;
     margin: 0 auto;
 }
 a{
@@ -28,7 +28,7 @@ li{
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 10%;
-    background-color: green;
+    background-color: rgb(49, 117, 49, 0.5);
     text-align:center;
 }
 
@@ -50,7 +50,7 @@ h1{
     transition: .5s ease-out;
 }
 .accordion:hover .accordion-title{
-    color:red;
+    color: black;
 }
 .accordion-item{
     border: 1px solid red;
@@ -61,12 +61,18 @@ h1{
     width:0;
     height:0;
 }
+.accordion-input:checked + .accordion-image{
+    display:block;
+}
+.accordion-input:checked + .accordion-title{
+    color: red;
+}
 .accordion-title{
     display: block;
     
-    font-size:2em;
+    font-size:1.5em;
     color: white;
-
+    margin-bottom: 5%;
     cursor:pointer;
 }
 
@@ -74,6 +80,6 @@ h1{
  padding: 5%;
  display:none;
 }
-.accordion-title:hover{
-   color: blue;
+.accordion-item:hover .accordion-image{
+   display:block;
 }
