@@ -1,0 +1,143 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lobster Two', cursive;
+    font-style: oblique;
+    line-height: 1.5;
+    background-color: goldenrod;
+
+
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+img{
+    display:block;
+    width: 40%;
+
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 10%;
+    background-color: rgb(49, 117, 49, 0.5);
+}
+
+h1{
+    font-style: oblique;
+    text-align:center;
+    color: green;
+}
+.accordion{
+
+   max-width: 70%; 
+   margin: auto;
+
+   display: flex;
+   flex-direction: column;
+}
+
+/* .accordion:hover .accordion-title:not(.accordion-title:has(input:checked)){
+    color: white;
+} */
+
+.accordion-item{
+    border-bottom: 1px solid darkgreen;
+}
+.accordion-item:active .accordion-image{
+    transform: scale(1);
+}
+.accordion-item:last-child{
+    border-bottom: 0px;
+}
+.accordion-input{
+    appearance: none;
+    position:absolute;
+    width:0;
+    height:0;
+}
+.accordion-item label input[checked] ~ .accordion-image{
+   display: block;
+}
+.accordion-label:checked ~ .accordion-title{
+    color: rgb(81, 209, 81);
+}
+
+.accordion-item:active{
+    background-color: rgb(49, 117, 49, 0.1);
+}
+.accordion-item:active .accordion-title{
+    color: rgb(81, 209, 81);
+}
+
+.accordion-item:first-child > .accordion-image {
+    display:block;
+}
+
+.accordion-item:first-child > .accordion-title:after {
+    transform: translateY(-50%) rotate(40deg);
+    font-size: 2.5em;
+}
+.accordion-item:first-child > .accordion-title{
+    color: black;
+}
+.accordion-title{
+    display: block;
+    
+    font-size:1.5em;
+    color: white;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    cursor:pointer;
+
+    position: relative;
+}
+
+.accordion-image{
+ padding: 5%;
+ display:none;
+}
+
+
+
+
+/* to support hover effects for tablet and mobile */
+@media (hover: hover) {
+
+   .accordion:hover .accordion-title:after{
+        display:block;
+        content: "+";
+        position: absolute;
+        font-size: 2em;
+        right: 5%;
+        top: 5%;
+        transform: translateY(-50%);
+        transition: 0.2s all;
+    }
+    .accordion-item:hover .accordion-title:after{
+        transition: 0.1s all;
+        transform: translateY(-50%) rotate(40deg);
+        font-size: 2.5em;
+    }
+    .accordion:hover{
+        cursor: pointer;
+        transition: 0.2s all;
+    }
+    .accordion-item:hover .accordion-image{
+        display: block;
+        transition: 0.2s ease-out;
+     }
+}
+
