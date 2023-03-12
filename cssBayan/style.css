@@ -27,7 +27,7 @@ li{
     list-style-type: none;
 }
 .container{
-    max-width: 1920px;
+    max-width: 120rem;
     margin: 0 auto;
     padding: 0 10%;
     background-color: rgb(49, 117, 49, 0.5);
@@ -48,12 +48,12 @@ h1{
 }
 .accordion:hover{
     cursor: pointer;
-
-    transition: 1s ease-out;
+    transition: 0.2s all;
 }
 .accordion:hover .accordion-title{
-    color: black;
+    color: white;
 }
+
 .accordion-item{
     border-bottom: 1px solid darkgreen;
 }
@@ -72,6 +72,18 @@ h1{
 .accordion-input:checked ~ .accordion-title{
     color: rgb(81, 209, 81);
 }
+
+.accordion-item:first-child > .accordion-image {
+    display:block;
+}
+
+.accordion-item:first-child > .accordion-title:after {
+    transform: translateY(-50%) rotate(40deg);
+    font-size: 2.5em;
+}
+.accordion-item:first-child > .accordion-title{
+    color: black;
+}
 .accordion-title{
     display: block;
     
@@ -88,10 +100,12 @@ h1{
  padding: 5%;
  display:none;
 }
+
 .accordion-item:hover .accordion-image{
    display:block;
+   transition: 0.5s ease-out;
 }
-.accordion-title:after{
+.accordion:hover .accordion-title:after{
     display:block;
     content: "+";
     position: absolute;
@@ -99,10 +113,11 @@ h1{
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    transition: 0.3s all;
+    transition: 0.2s all;
 }
 
 .accordion-item:hover .accordion-title:after{
-    transform: translateY(-50%) rotate(217deg);
+    transition: 0.2s all;
+    transform: translateY(-50%) rotate(40deg);
     font-size: 2.5em;
 }
