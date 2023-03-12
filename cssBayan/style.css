@@ -6,6 +6,8 @@ body {
     font-style: oblique;
     line-height: 1.5;
     background-color: goldenrod;
+
+
 }
 
 *, *::before, *::after {
@@ -29,31 +31,34 @@ li{
     margin: 0 auto;
     padding: 0 10%;
     background-color: rgb(49, 117, 49, 0.5);
-    text-align:center;
 }
 
-hr{
-    color: grey;
-}
 h1{
     font-style: oblique;
     text-align:center;
     color: green;
 }
 .accordion{
+
    max-width: 50%; 
    margin: auto;
+
+   display: flex;
+   flex-direction: column;
 }
 .accordion:hover{
     cursor: pointer;
 
-    transition: .5s ease-out;
+    transition: 1s ease-out;
 }
 .accordion:hover .accordion-title{
     color: black;
 }
 .accordion-item{
-    border: 1px solid red;
+    border-bottom: 1px solid darkgreen;
+}
+.accordion-item:last-child{
+    border-bottom: 0px;
 }
 .accordion-input{
     appearance: none;
@@ -61,11 +66,11 @@ h1{
     width:0;
     height:0;
 }
-.accordion-input:checked + .accordion-image{
+.accordion-input:checked ~ .accordion-image{
     display:block;
 }
-.accordion-input:checked + .accordion-title{
-    color: red;
+.accordion-input:checked ~ .accordion-title{
+    color: rgb(81, 209, 81);
 }
 .accordion-title{
     display: block;
@@ -73,7 +78,10 @@ h1{
     font-size:1.5em;
     color: white;
     margin-bottom: 5%;
+    margin-top: 5%;
     cursor:pointer;
+
+    position: relative;
 }
 
 .accordion-image{
@@ -82,4 +90,19 @@ h1{
 }
 .accordion-item:hover .accordion-image{
    display:block;
+}
+.accordion-title:after{
+    display:block;
+    content: "+";
+    position: absolute;
+    font-size: 2em;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s all;
+}
+
+.accordion-item:hover .accordion-title:after{
+    transform: translateY(-50%) rotate(217deg);
+    font-size: 2.5em;
 }
